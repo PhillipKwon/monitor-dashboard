@@ -13,15 +13,23 @@
 
 <script setup lang="ts">
 import { fetchMetrics } from '@/api/dashboard';
+import { useUserStore } from '@/stores/useStore';
 import { useQuery } from '@tanstack/vue-query';
 
-// import { useDashboardStore } from '@/stores/useDashboardStore'
-// const store = useDashboardStore()
-// access QueryClient instance
 const { data, isLoading, isError, error} = useQuery({
   queryKey: ['dashboard'],
   queryFn: fetchMetrics,
   refetchInterval: 5000
 })
+
+const userStore = useUserStore();
+userStore.login({
+  id: 1,
+  name: '홍길동',
+  email: 'abc@def.com',
+  role: 'admin'
+});
+
+console.log(userStore.isAdmin);
 
 </script>
