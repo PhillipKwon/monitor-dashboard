@@ -6,21 +6,19 @@
 
     "baseUrl": ".",
     "paths": {
-      "@@/*": ["src/*"]
+      "@/*": ["src/*"]
     },
     "types": ["vite/client"],
 
     // Linting
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
 
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules", "dist", "build", "mocks", "public/mockServiceWorker.js"],
 }
