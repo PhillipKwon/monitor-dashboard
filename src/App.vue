@@ -1,15 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <p>
-    <strong>Current route path:</strong> {{ $route.path }}
-  </p>
-  <nav>
-    <RouterLink to="/">Dashboard</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-  </nav>
   <main>
     <RouterView />
   </main>
